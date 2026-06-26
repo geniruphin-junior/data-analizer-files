@@ -1,0 +1,63 @@
+Unnamed: 0,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9
+,Budget mensuel personnel,,,,,,,,
+,,,,,,,,,
+,REVENU MENSUEL PRÉVU,Revenu 1,,2500,,BILAN PRÉVU (Revenu prévu moins les dépenses),,,940
+,,Revenu supplémentaire,,500,,,,,
+,,Revenu mensuel total,,3000,,BILAN RÉEL (Revenu réel moins les dépenses),,,960
+,REVENU MENSUEL RÉEL,Revenu 1,,2500,,,,,
+,,Revenu supplémentaire,,500,,DIFFÉRENCE (Réel moins Prévu),,,20
+,,Revenu mensuel total,,3000,,,,,
+,,,,,,,,,
+,LOGEMENT,Coût prévu,Coût réel,Différence,,LOISIR,Coût prévu,Coût réel,Différence
+,Hypothèque ou loyer,1500,1400,100,,Vidéo/DVD,0,50,-50
+,Téléphone,60,100,-40,,CD,,,0
+,Électricité,50,60,-10,,Films,,,0
+,Essence,200,180,20,,Concerts,,,0
+,Eau et égout,,,0,,Événements sportifs,,,0
+,Câble,,,0,,Théatre,,,0
+,Enlèvement des déchets,,,0,,Autre,,,0
+,Maintenance ou réparations,,,0,,Autre,,,0
+,Fournitures,,,0,,Autre,,,0
+,Autre,,,0,,Total,0,50,-50
+,Total,1810,1740,70,,,,,
+,,,,,,PRÊTS,Coût prévu,Coût réel,Différence
+,TRANSPORTS,Coût prévu,Coût réel,Différence,,Personnel,,,0
+,Paiement véhicule,250,250,0,,Étudiant,,,0
+,Frais bus/taxi,,,0,,Carte de crédit,,,0
+,Assurance,,,0,,Carte de crédit,,,0
+,Gestion des licences,,,0,,Carte de crédit,,,0
+,Carburant,,,0,,Autre,,,0
+,Maintenance,,,0,,Total,0,0,0
+,Autre,,,0,,,,,
+,Total,250,250,0,,IMPÔTS,Coût prévu,Coût réel,Différence
+,,,,,,Fédéral,,,0
+,ASSURANCE,Coût prévu,Coût réel,Différence,,État,,,0
+,Logement,,,0,,Local,,,0
+,Santé,,,0,,Autre,,,0
+,Durée,,,0,,Total,0,0,0
+,Autre,,,0,,,,,
+,Total,0,0,0,,ÉPARGNE OU INVESTISSEMENT,Coût prévu,Coût réel,Différence
+,,,,,,Compte de prise en charge de cession,,,0
+,REPAS,Coût prévu,Coût réel,Différence,,Compte d'investissement,,,0
+,Épicerie,,,0,,Autre,,,0
+,Restaurant,,,0,,Total,0,0,0
+,Autre,,,0,,,,,
+,Total,0,0,0,,DONS ET DONATIONS,Coût prévu,Coût réel,Différence
+,,,,,,Bienfaisance 1,,,0
+,ANIMAUX DOMESTIQUES,Coût prévu,Coût réel,Différence,,Bienfaisance 2,,,0
+,Repas,,,0,,Bienfaisance 3,,,0
+,Santé,,,0,,Total,0,0,0
+,Toilettage,,,0,,,,,
+,Jouets,,,0,,JURIDIQUE,Coût prévu,Coût réel,Différence
+,Autre,,,0,,Avocat,,,0
+,Total,0,0,0,,Pension alimentaire,,,0
+,,,,,,Paiements sur privilège ou créance exécutoire,,,0
+,SOINS,Coût prévu,Coût réel,Différence,,Autre,,,0
+,Santé,,,0,,Total,0,0,0
+,Coiffure/manucure,,,0,,,,,
+,Habillement,,,0,,COÛT PRÉVU TOTAL,,,2060
+,Nettoyage à sec,,,0,,,,,
+,Centre de santé,,,0,,COÛT RÉEL TOTAL,,,2040
+,Cotisations ou charges d'entreprise,,,0,,,,,
+,Autre,,,0,,DIFFÉRENCE TOTAL,,,20
+,Total,0,0,0,,,,,
