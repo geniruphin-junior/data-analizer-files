@@ -18,4 +18,5 @@ __pycache__/
 Thumbs.db
 .vscode/
 .idea/
+.gitkeep
 
