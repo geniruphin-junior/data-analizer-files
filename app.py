@@ -1,15 +1,19 @@
 # app.py - Assemblé par Ruphin pour l'équipe Data-Analyzer
 import os
 import streamlit as st
-import pandas as pd as px
+import pandas as pd
 import random
-import plotly.express
+import plotly.express as px
 
 # ==========================================
 # IMPORTATION DE MES MODULES (MON CERVEAU PANDAS)
 # ==========================================
 from utils.load_file import load_file
-from utils.data_cleaner import get_cleaning_report, delete_duplicates,fill_missing_values
+from utils.data_cleaner import (
+    get_cleaning_report,
+    delete_duplicates,
+    fill_missing_values,
+)
 from utils.info import get_info
 
 # ==========================================
@@ -107,8 +111,6 @@ if section == "Accueil":
         )
         st.subheader("🎬 Démonstration instantanée")
         st.dataframe(demo_df, use_container_width=True)
-
-        
 
         # Palette cyberpunk fixe
         cyberpunk_colors = [
@@ -251,7 +253,6 @@ pip install -r requirements.txt
             cols_str = df_actuel.select_dtypes(include="object").columns.tolist()
 
             if cols_num and cols_str:
-                
 
                 col_x = cols_str[0]
                 col_y = cols_num[0]
@@ -266,7 +267,9 @@ pip install -r requirements.txt
                 )
                 st.plotly_chart(fig_auto, use_container_width=True)
             else:
-                st.info("Votre fichier ne permet pas de genérer des graphiques automatiques, consulter la section graphique")
+                st.info(
+                    "Votre fichier ne permet pas de genérer des graphiques automatiques, consulter la section graphique"
+                )
 
 
 # ==========================================
@@ -285,24 +288,29 @@ elif section == "📊graphiques":
         )
         st.bar_chart(pd.DataFrame({"Valeurs": [10, 20, 15]}, index=["A", "B", "C"]))
     else:
-        df = st.session_state["df"].copy() # on fait une copie
-        for col in df.columns: # on repère les colonnes nécessaires 
+        df = st.session_state["df"].copy()  # on fait une copie
+        for col in df.columns:  # on repère les colonnes nécessaires
             if df[col].dtype != "object":
                 df[col] = pd.to_numeric(df[col], errors="coerce")
 
-        cols_num = df.select_dtypes(include="number").columns.tolist() # je les transforme en liste
+        cols_num = df.select_dtypes(
+            include="number"
+        ).columns.tolist()  # je les transforme en liste
         cols_str = df.select_dtypes(exclude="number").columns.tolist()
 
         st.subheader("🎛️ Configuration du graphique")
-        # selection des colonnes pour visualisation 
+        # selection des colonnes pour visualisation
         col_x = st.selectbox("Choisir une colonne catégorielle (X)", cols_str)
         col_y = st.selectbox("Choisir une colonne numérique (Y)", cols_num)
 
         grouped = (
-            df.groupby(col_x)[col_y].mean().sort_values(ascending=False).to_frame()
+            df.groupby(col_x)[col_y]
+            .mean()
+            .sort_values(ascending=False)
+            .to_frame()  # du plus grand au plus petit
         )
 
-        cyberpunk_palette = [
+        cyberpunk_palette = [  # palette des couleurs
             "#FF007F",
             "#00F0FF",
             "#9D00FF",
@@ -314,7 +322,9 @@ elif section == "📊graphiques":
         ]
         grouped["Couleur"] = (
             cyberpunk_palette * (len(grouped) // len(cyberpunk_palette) + 1)
-        )[: len(grouped)]
+        )[
+            : len(grouped)
+        ]  # calcul  de coloration
 
         st.info(f"📊 Graphique généré : **{col_y}** par **{col_x}**")
         st.bar_chart(grouped, y=col_y, color="Couleur")
@@ -412,7 +422,9 @@ elif section == "Synthèse IA":
 # ==========================================
 elif section == "collaboration":
     st.title("🤝 Collaboration & Partage")
-    st.write("Cette section permet de travailler en équipe sur vos données.")
+    st.write(
+        "Cette section permet de travailler en équipe sur vos données ou de collaborer avec nous."
+    )
 
     # --- Options de collaboration ---
     st.subheader("📤 Export & Partage")
@@ -426,20 +438,36 @@ elif section == "collaboration":
     # --- Démo fictive ---
     st.subheader("🎬 Démonstration de collaboration")
     st.write(
-        "**IA DataBot :** Ruphin, imagine que tu viens d’exporter ton rapport. Voici ce que tes collègues verront :"
+        "**IA DataBot :** Alice, imagine que tu viens d’exporter ton rapport. Voici ce que tes collègues verront  :"
     )
     demo_collab = pd.DataFrame(
         {
-            "Utilisateur": ["Alice", "Bob", "Charlie"],
+            "Utilisateur": [
+                "Alice",
+                "Bob",
+                "Charlie",
+                "claude",
+                "pascal",
+                "daniel",
+                "julie",
+            ],
             "Action": [
                 "Consulté le rapport",
                 "Ajouté un commentaire",
                 "Partagé sur Slack",
+                "Ajouter d'autres données",
+                "Recevoir tout le rapport clean",
+                "Nettoyer le rapport",
+                "Soumettre les données à un algorithme",
             ],
         }
     )
     st.dataframe(demo_collab, use_container_width=True)
+    st.code(
+        "import pandas as pd\nimport numpy as np\nimport plotly.express as px\ndf = pd.DataFrame(demo_collab)\ndf['contributions'] = np.linspace(1,10,7)\nfig = px.bar(df,x='Utilisateur',y='contributions'title='Les contributeurs et leurs contributions')\nfig.show()",
+        langage="python",
+    )
 
     st.info(
-        "Fonctionnalités en cours de développement. L'objectif est de permettre aux entreprises de collaborer en temps réel sur leurs fichiers."
+        "Fonctionnalités en cours de développement. L'objectif est de permettre aux gens de collaborer en temps réel sur leurs fichiers."
     )
