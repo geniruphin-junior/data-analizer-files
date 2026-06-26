@@ -10,15 +10,15 @@ L'objectif du projet est de fournir une solution simple et évolutive permettant
 
 ### 🏠 Accueil
 
-![Accueil](dashboard.png)
+![Accueil](assets/dashboard.png)
 
 ### 📈 Analyse & Visualisation
 
-![Visualisation](analyste.png)
+![Visualisation](assets/analyste.png)
 
 ### 🤖 Synthèse IA
 
-![Synthèse IA](ia.png)
+![Synthèse IA](assets/ia.png)
 
 ---
 
