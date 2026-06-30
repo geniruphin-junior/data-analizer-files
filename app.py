@@ -15,8 +15,7 @@ from utils.data_cleaner import (
     fill_missing_values,
 )
 from utils.info import get_info
-
-# ==========================================
+#===========================================================================================
 # CONFIGURATION DE LA PAGE
 # ==========================================
 st.set_page_config(page_title="Data-Analyzer files", page_icon="📊", layout="wide")
