@@ -248,15 +248,16 @@ pip install -r requirements.txt
             cols_num = []
             cols_str = []
             for col in df_actuel.columns:
-                converted = pd.to_numeric(df_actuel[col], errors="ignore")
-                if pd.api.types.is_numeric_dtype(converted):
+                try:
+                    converted = pd.to_numeric(df_actuel[col], errors="raise")
                     df_actuel[col] = converted
                     cols_num.append(col)
-                elif df_actuel[col].dtype == "object":
-                    cols_str.append(col)
-                    if cols_num and cols_str:
-                        col_x = cols_str[0]
-                        col_y = cols_num[0]
+                except (ValueError, TypeError):
+                    if df_actuel[col].dtype == "object":
+                        cols_str.append(col)
+            if cols_num and cols_str:
+                col_x = cols_str[0]
+                col_y = cols_num[0]
                 df_grouped = df_actuel.groupby(col_x)[col_y].mean().reset_index()
                 fig_auto = px.bar(
                     df_grouped,
@@ -467,7 +468,7 @@ elif section == "collaboration":
     st.dataframe(demo_collab, use_container_width=True)
     st.code(
         "import pandas as pd\nimport numpy as np\nimport plotly.express as px\ndf = pd.DataFrame(demo_collab)\ndf['contributions'] = np.linspace(1,10,7)\nfig = px.bar(df,x='Utilisateur',y='contributions'title='Les contributeurs et leurs contributions')\nfig.show()",
-        langage="python",
+        language="python",
     )
 
     st.info(
