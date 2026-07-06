@@ -10,7 +10,7 @@ def get_info(data: pd.DataFrame, group_col=None, target_col=None, max_rows=1000)
     if not isinstance(data, pd.DataFrame):
         raise TypeError("data doit être un DataFrame pandas")
 
-    df = df.copy()
+    df = data.copy()
 
     # sécurité RAM important pour nous qui avons 4go de ram vive astuce donné sur une documentation
     if len(df) > max_rows:

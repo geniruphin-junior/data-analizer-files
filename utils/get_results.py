@@ -1,18 +1,16 @@
 import pandas as pd
 
 
-def get_info(data: pd.DataFrame, group_col=None, target_col=None, max_rows=1000):
+def get_info(df: pd.DataFrame, group_col=None, target_col=None, max_rows=1000):
     """
     Module d'analyse pour Streamlit préparé  pour gloire
     Retourne infos + statistiques + groupby optionnel.
     """
 
-    if not isinstance(data, pd.DataFrame):
+    if not isinstance(df, pd.DataFrame):
         raise TypeError("data doit être un DataFrame pandas")
 
-    df = data.copy()
-
-    # sécurité RAM important pour nous qui avons 4go de ram vive
+    # sécurité RAM important pour nous et la ram vive
     if len(df) > max_rows:
         df = df.head(max_rows)
 

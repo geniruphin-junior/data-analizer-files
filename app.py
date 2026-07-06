@@ -359,7 +359,7 @@ elif section == "Analyse détaillée":
                 "Sélectionner la colonne cible (Numérique)", cols_numeriques
             )
             if cols_numeriques
-            else None
+            else st.info("Aucune collone numérique trouvée")
         )
 
         # --- Calcul via mon module get_info ---
@@ -372,7 +372,7 @@ elif section == "Analyse détaillée":
         types_df = pd.DataFrame(
             {
                 "Type de données": info_calculée["dtypes"],
-                "Cases Manquantes": info_calculée["missing_values"],
+                "Cases Manquantes": info_calculée["valeures manquantes"],
             }
         )
         st.dataframe(types_df.T, use_container_width=True)
