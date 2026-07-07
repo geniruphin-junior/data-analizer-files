@@ -1,5 +1,7 @@
 import plotly.express as px
 import pandas as pd
+import numpy as np
+import time
 
 
 # creation de la classe de visualisation
@@ -30,7 +32,7 @@ class Visualizer:
     # methode pour  scatter chart
     def _scatter_chart(self, col_num: str, col_str: str, title: str) -> str:
         fig = px.scatter(self.df, x=col_str, y=col_num, title=title)
-        fig.show
+        fig.show()
         return fig
 
     # methode pour histogramme
@@ -40,6 +42,31 @@ class Visualizer:
         return fig
 
 
-df = pd.DataFrame({"classe": ["ruphin", "jules", "rodri"], "points": [34, 45, 67]})
+file = "F:\projet_programs\Datascience-for-begginers\Wine Quality Classification\data\winequality-red.csv"
+
+df = pd.read_csv(file)
+# donner le nombre des lignes et collones pour mieux savoir les dimmensiosns du dataframe
+print(df.shape)
+
+if df.shape[0] > 1000:
+    df = df.head(1000)
+else:
+    df = df.copy()
+col = df.columns[0]
+# print(int(df[col].mean()))
+
 dataframe = Visualizer(df)
-dataframe._hist_chart("points", 4)
+# dataframe._scatter_chart("fixed_acidity", "volatile_acidity", "visualisation")
+
+
+def diff(a, b):
+    print(np.mean(df[a]) - np.mean(df[b]))
+
+
+start = time.time()
+
+diff("fixed_acidity", "volatile_acidity")
+
+end = time.time()
+
+print(end - start)
