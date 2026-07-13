@@ -281,7 +281,7 @@ pip install -r requirements.txt
 elif section == "📊graphiques":
     st.title("📊 Graphiques dynamiques et interactifs")
 
-    if "df" not in st.session_state:
+    if not "df" in st.session_state:
         st.warning(
             "⚠️ Importez d’abord un fichier sur la page d’accueil ou utilisez la démo."
         )

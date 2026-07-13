@@ -14,7 +14,7 @@ try:
         else:
             raise ValueError
 
-        """Boucle for pour le remplace ment automatique des case vides exels et csv"""
+        """Boucle for pour le remplacement automatique des case vides exels et csv"""
 
         """ les sorties apres mon analyse poussé,
         remplacement des cases,stats et autres infos sur un fichier,car pandas et capable de le faire,
@@ -49,11 +49,16 @@ try:
         for col in data.columns:
 
             if data[col].dtype == "int64":
-                value = 0
-
+                value = int(
+                    input(
+                        "Quel nombre souhaite tu remplacer par tes cases vides entiers ou decimales : "
+                    )
+                )
                 data[col] = data[col].fillna(value)
-            elif data[col].dtype == "flaot64":
-                value = 0.0
+            elif data[col].dtype == "float64":
+                value = float(
+                    input("veux tu remplacer tes cases vides décimal par quel nombre")
+                )
                 data[col] = data[col].fillna(value)
             else:
                 data[col] = data[col].fillna("indefinite")
@@ -71,7 +76,7 @@ try:
     else:
         raise FileNotFoundError
 
-except FileNotFoundError:
+except ValueError:
     print("fichier introuvable")
 
 except ValueError:
