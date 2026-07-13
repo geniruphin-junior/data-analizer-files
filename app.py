@@ -68,7 +68,7 @@ with st.sidebar:
 if section == "Accueil":
     st.title("🚀 Bienvenue sur Data-Analyzer Files")
     st.write(
-        "**L’assistant intelligent pour explorer, nettoyer et visualiser vos données.**"
+        "**L’assistant intelligent pour explorer, nettoyer et visualiser vos données rapidement.**"
     )
 
     # --- Guide utilisateur ---
@@ -458,7 +458,7 @@ elif section == "collaboration":
     # --- Démo fictive ---
     st.subheader("🎬 Démonstration de collaboration")
     st.write(
-        "**IA DataBot :** Alice, imagine que tu viens d’exporter ton rapport. Voici ce que tes collègues verront  :"
+        "**IA DataBot :** Alice, imagine que tu viens d’exporter ton rapport. Voici à quoi ca ressemble :"
     )
     demo_collab = pd.DataFrame(
         {
@@ -482,7 +482,14 @@ elif section == "collaboration":
             ],
         }
     )
+    st.write(demo_collab.to_dict())
+    st.write(
+        "**DataBot :** mais avec nos outils  regarde un exemple de ce que ça donne \n et sans mentir la comparaison est gigantesque car ça c'est plus lisible\nmoderne et adapté à tes besoins tu peux manipuler ce tableau le filtrer dans l'app et meme l'enregistre selon tes goûts "
+    )
     st.dataframe(demo_collab, use_container_width=True)
+    st.write(
+        "**DataBot : ** et voici à quoi ressemble un code de data pour faire de bonnes analyses "
+    )
     st.code(
         "import pandas as pd\nimport numpy as np\nimport plotly.express as px\ndf = pd.DataFrame(demo_collab)\ndf['contributions'] = np.linspace(1,10,7)\nfig = px.bar(df,x='Utilisateur',y='contributions'title='Les contributeurs et leurs contributions')\nfig.show()",
         language="python",
