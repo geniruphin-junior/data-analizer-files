@@ -434,10 +434,8 @@ elif section == "Synthèse IA":
         st.warning(
             "⚠️ Attention : la colonne 'Croissance (%)' présente des valeurs manquantes qui pourraient fausser l'analyse."
         )
-    solution = st.text_input("Ruphin : ")
-    if solution:
         st.info(
-            "💡 Bientôt, cette section utilisera une clé API pour générer des synthèses réelles basées sur vos données."
+            "💡 Pas pour l'insatant bientôt, cette section utilisera une clé API pour générer des synthèses réelles basées sur vos données."
         )
 # ==========================================
 # PAGE 5 : COLLABORATION
