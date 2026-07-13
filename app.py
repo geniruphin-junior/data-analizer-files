@@ -305,19 +305,15 @@ elif section == "📊graphiques":
     # Vraie visualision apres juste upload
     else:
         df = st.session_state["df"].copy()
-        for col in df.columns:
-            if df[col].dtype != "object":
-                df[col] = pd.to_numeric(df[col], errors="coerce")
 
         # detection des differents types de collones et on les transforme en liste
         cols_num = df.select_dtypes(include="number").columns.tolist()
-        cols_str = df.select_dtypes(include="str").columns.tolist()
-        cols_string = df.columns
+        cols_str = df.select_dtypes(exclude="number").columns.tolist()
 
         st.subheader("🎛️ Configuration du graphique")
 
         # selection des colonnes pour visualisation
-        col_x = st.selectbox("Choisir une colonne catégorielle (X)", cols_string)
+        col_x = st.selectbox("Choisir une colonne catégorielle (X)", cols_str)
         col_y = st.selectbox("Choisir une colonne numérique (Y)", cols_num)
 
         grouped = (
