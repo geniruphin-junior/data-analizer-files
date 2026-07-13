@@ -319,8 +319,8 @@ elif section == "📊graphiques":
         grouped = (
             df.groupby(col_x)[col_y]
             .mean()
-            .sort_values(ascending=False)
-            .to_frame()  # du plus grand au plus petit
+            .sort_values(ascending=False)  # du plus grand au plus petit
+            .to_frame()
         )
 
         cyberpunk_palette = [  # palette des couleurs
@@ -421,16 +421,24 @@ elif section == "Synthèse IA":
 
     # Démo fictive pour rassurer l'utilisateur
     st.subheader("🎬 Démonstration IA fictive")
-    st.write(
-        "**IA DataBot :** Bonjour Ruphin 👋, j’ai analysé ton DataFrame. Voici mes observations :"
-    )
-    st.success("✅ Les données montrent une tendance positive sur la colonne 'Ventes'.")
-    st.warning(
-        "⚠️ Attention : la colonne 'Croissance (%)' présente des valeurs manquantes qui pourraient fausser l'analyse."
-    )
-    st.info(
-        "💡 Bientôt, cette section utilisera une clé API pour générer des synthèses réelles basées sur vos données."
-    )
+    salutation = st.text_input("User : ")
+    if salutation:
+        st.write(
+            "**IA DataBot :** Bonjour Ruphin 👋, j’ai analysé ton DataFrame. Voici mes observations :"
+        )
+    question = st.text_input("Ruphin : ")
+    if question:
+        st.success(
+            "✅ Les données montrent une tendance positive sur la colonne 'Ventes'."
+        )
+        st.warning(
+            "⚠️ Attention : la colonne 'Croissance (%)' présente des valeurs manquantes qui pourraient fausser l'analyse."
+        )
+    solution = st.txt_input("Ruphin : ")
+    if solution:
+        st.info(
+            "💡 Bientôt, cette section utilisera une clé API pour générer des synthèses réelles basées sur vos données."
+        )
 # ==========================================
 # PAGE 5 : COLLABORATION
 # ==========================================
