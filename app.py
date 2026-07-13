@@ -291,6 +291,7 @@ python main.py
 elif section == "📊graphiques":
     st.title("📊 Graphiques dynamiques et interactifs")
 
+    # Démo fictive si il n'ya pas d'upload de fichier
     if not "df" in st.session_state:
         st.warning(
             "⚠️ Importez d’abord un fichier sur la page d’accueil ou utilisez la démo."
@@ -300,15 +301,16 @@ elif section == "📊graphiques":
             pd.DataFrame({"Exemple": ["A", "B", "C"], "Valeurs": [10, 20, 15]})
         )
         st.bar_chart(pd.DataFrame({"Valeurs": [10, 20, 15]}, index=["A", "B", "C"]))
+
+    # Vraie visualision apres juste upload
     else:
-        df = st.session_state["df"].copy()  # on fait une copie
-        for col in df.columns:  # on repère les colonnes nécessaires
+        df = st.session_state["df"].copy()
+        for col in df.columns:
             if df[col].dtype != "object":
                 df[col] = pd.to_numeric(df[col], errors="coerce")
 
-        cols_num = df.select_dtypes(
-            include="number"
-        ).columns.tolist()  # je les transforme en liste
+        # detection des differents types de collones et on les transforme en liste
+        cols_num = df.select_dtypes(include="number").columns.tolist()
         cols_str = df.select_dtypes(exclude="number").columns.tolist()
 
         st.subheader("🎛️ Configuration du graphique")
