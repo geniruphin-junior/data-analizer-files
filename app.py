@@ -286,7 +286,7 @@ python main.py
 
 
 # ==========================================
-# PAGE 2 : 📊 GRAPHIQUES (INTERACTIF & STABLE)
+# PAGE 2 : 📊 GRAPHIQUES (INTERACTIF & STABLE) EN ATTENTE ET MODIFICATION
 # ==========================================
 elif section == "📊graphiques":
     st.title("📊 Graphiques dynamiques et interactifs")
@@ -311,11 +311,12 @@ elif section == "📊graphiques":
 
         # detection des differents types de collones et on les transforme en liste
         cols_num = df.select_dtypes(include="number").columns.tolist()
-        cols_str = df.select_dtypes(exclude="number").columns.tolist()
+        cols_string = df.select_dtype(exclude="number")columns.tolist()
 
         st.subheader("🎛️ Configuration du graphique")
+
         # selection des colonnes pour visualisation
-        col_x = st.selectbox("Choisir une colonne catégorielle (X)", cols_str)
+        col_x = st.selectbox("Choisir une colonne catégorielle (X)", cols_string)
         col_y = st.selectbox("Choisir une colonne numérique (Y)", cols_num)
 
         grouped = (
