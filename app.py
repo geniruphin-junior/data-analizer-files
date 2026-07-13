@@ -15,7 +15,8 @@ from utils.data_cleaner import (
     fill_missing_values,
 )
 from utils.info import get_info
-#===========================================================================================
+
+# ===========================================
 # CONFIGURATION DE LA PAGE
 # ==========================================
 st.set_page_config(page_title="Data-Analyzer files", page_icon="📊", layout="wide")
@@ -77,7 +78,7 @@ if section == "Accueil":
     2. Analysez vos données avec nos outils automatiques.  
     3. Visualisez vos résultats dans des graphiques interactifs futuristes.  
     4. Collaborez avec votre équipe ou sur le projet grâce à la section dédiée.  
-    5. Explorez les dev ressources : [Firebase](https://firebase.google.com) | [Copilot](https://copilot.microsoft.com)
+    5. Explorez les dev ressources : [Firebase](https://firebase.google.com)  |  [Copilot](https://copilot.microsoft.com)
     """)
 
     uploaded_file = st.file_uploader(
@@ -171,11 +172,11 @@ if section == "Accueil":
         # --- IA fictive ---
         st.subheader("🤖 Simulation IA")
         st.write(
-            "**DataBOt :** Bonjour Ruphin 👋, j’ai analysé les langages de programmation. Voici mes observations :"
+            "**DataBOt :** Bonjour GéniRuphin 👋, j’ai analysé les langages de programmation. Voici mes observations :"
         )
         st.success("✅ Python et JavaScript dominent en popularité et en likes.")
         st.warning(
-            "⚠️ C++ reste puissant mais demande plus d’années pour devenir senior et est concurencé par rust."
+            "⚠️ C++ reste puissant mais demande plus d’années pour  avoir un bon niveau et est concurencé par rust."
         )
         st.info(
             "💡 TypeScript est stratégique : rapide à maîtriser et très demandé en web moderne."
@@ -190,6 +191,15 @@ git clone https://github.com/geniruphin-junior/data-analizer-files.git
 
 # Installer les librairies nécessaires
 pip install -r requirements.txt
+
+# Entrer dans le dossier du projet 
+cd data-analizer-files
+
+# Lancer l'app avec web 
+streamlit run app.py
+
+# Lancer l'app en ligne de commande
+python main.py
         """,
             language="bash",
         )
@@ -373,6 +383,7 @@ elif section == "Analyse détaillée":
             {
                 "Type de données": info_calculée["dtypes"],
                 "Cases Manquantes": info_calculée["valeures manquantes"],
+                "Doublons": info_calculée["Doublons"],
             }
         )
         st.dataframe(types_df.T, use_container_width=True)

@@ -24,9 +24,8 @@ def get_info(data: pd.DataFrame, group_col=None, target_col=None, max_rows=1000)
         ).to_dict(),  # utiles pour les utilisateurs programmeurs
         "valeures manquantes": df.isna().sum().to_dict(),
         "entete": df.head(10).to_dict(orient="records"),  # utile pour streamlit
-        "dernieres lignes": df.tail(5).to_dict(
-            orient="records"
-        ),  # utile pour streamlit
+        "dernieres lignes": df.tail(5).to_dict(orient="records"),
+        "Doublons": df.duplicated().sum(),  # utile pour streamlit
     }
 
     # stats numériques
