@@ -1,8 +1,8 @@
 # 📊 DataAnalyzer Files
 
-**DataAnalyzer Files** est une application Python conçue pour l'analyse, l'exploration et la visualisation de données à partir de différents formats de fichiers.
+**DataAnalyzer Files** est une application Python conçue pour l'analyse rapide, l'exploration et la visualisation de données à partir des différents formats de fichiers.
 
-L'objectif du projet est de fournir une solution simple et évolutive permettant aux utilisateurs de comprendre rapidement leurs données grâce à une interface intuitive et des outils d'analyse automatisés.
+L'objectif du projet est de fournir une solution simple, rapide et évolutive permettant aux utilisateurs et à mes collègues de comprendre rapidement leurs données grâce à une interface intuitive et simple à prendre en main avec des outils d'analyse automatisés.
 
 ---
 
