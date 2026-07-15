@@ -11,16 +11,28 @@ class Visualizer:
 
     # Méthode pour scatter
     def _scatter(
-        self, col1: str, col2: str, colsize: str, template="plotly_dark"
+        self,
+        col1: str,
+        col2: str,
+        colsize: str,
+        template="plotly_dark",
+        colors=cyberpunk_colors,
     ) -> str:
         fig = px.scatter(
-            self.dataFrame, x=col1, y=col2, size=colsize, template=template
+            self.dataFrame,
+            x=col1,
+            y=col2,
+            size=colsize,
+            template=template,
+            color_discrete_sequence=colors,
         )
         fig.show()
         return fig
 
     # Méthode pour barres
-    def _bar_chart(self, col1: str, col2: str, template="plotly_dark"):
+    def _bar_chart(
+        self, col1: str, col2: str, template="plotly_dark", colors=cyberpunk_colors
+    ):
         fig = px.bar(
             self.dataFrame,
             x=col1,
@@ -28,20 +40,30 @@ class Visualizer:
             color=col1,
             title=self.title,
             template=template,
+            color_discrete_sequence=colors,
         )
         fig.show()
         return fig
 
     # Méthodes pour line(evolution d'une variable)
-    def _line_chart(self, col1: str, col2: str, template="plotly_dark"):
+    def _line_chart(
+        self, col1: str, col2: str, template="plotly_dark", colors=cyberpunk_colors
+    ):
         fig = px.line(
-            self.dataFrame, x=col1, y=col2, title=self.title, template=template
+            self.dataFrame,
+            x=col1,
+            y=col2,
+            title=self.title,
+            template=template,
+            color_discrete_sequence=colors,
         )
         fig.show()
         return fig
 
     # Méthode pour histogramme pour la mesure des variables d'un datatest
-    def _hist_chart(self, col: str, bins=10, template="plotly_dark"):
+    def _hist_chart(
+        self, col: str, bins=10, template="plotly_dark", colors=cyberpunk_colors
+    ):
         fig = px.histogram(
             self.dataFrame,
             x=col,
@@ -49,6 +71,7 @@ class Visualizer:
             color=col,
             nbins=bins,
             template=template,
+            color_discrete_sequence=colors,
         )
         fig.show()
         return fig
