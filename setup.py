@@ -10,7 +10,7 @@ structure = {
         "utils/data_cleaner.py",
         "utils/visualizer.py",
         "assets/.gitkeep",  # pour garder le dossier vide dans git
-        "sample_data/.gitkeep",  # idem
+        "sample_data/.gitkeep",
     ]
 }
 
