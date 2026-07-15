@@ -52,12 +52,12 @@ L'objectif du projet est de fournir une solution simple, rapide et évolutive pe
 - Backend
 - Lecture et traitement des fichiers
 - Analyse des données
-- Architecture du projet
+- Architecture modulaire du projet
+- POO
 
 ### Gloire
 
 - Interface utilisateur
-- Expérience utilisateur (UX)
 - Développement Streamlit
 
 ---
