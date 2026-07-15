@@ -1,5 +1,7 @@
 import plotly.express as px
 import plotly.graph_objects as go
+import streamlit as st
+import pandas as pd
 
 cyberpunk_colors = [
     "#FF007F",
@@ -13,7 +15,7 @@ cyberpunk_colors = [
 
 # classe principale des graphiques basiques
 class Visualizer:
-    def __init__(self, dataFrame):
+    def __init__(self, dataFrame: pd.DataFrame):
         self.dataFrame = dataFrame
 
     # Méthode pour scatter
@@ -22,18 +24,20 @@ class Visualizer:
         col1: str,
         col2: str,
         title: str,
-        colsize: str,
+        colsize,
         template="plotly_dark",
         colors=cyberpunk_colors,
-    ) -> str:
+    ):
         fig = px.scatter(
             self.dataFrame,
             x=col1,
             y=col2,
             size=colsize,
+            title=title,
             template=template,
             color_discrete_sequence=colors,
         )
+        return st.plotly_chart(fig)
 
     # Méthode pour barres
     def _bar_chart(
@@ -54,6 +58,8 @@ class Visualizer:
             color_discrete_sequence=colors,
         )
 
+        return st.plotly_chart(fig)
+
     # Méthodes pour line(evolution d'une variable)
     def _line_chart(
         self,
@@ -71,6 +77,7 @@ class Visualizer:
             template=template,
             color_discrete_sequence=colors,
         )
+        return st.plotly_chart(fig)
 
     # Méthode pour histogramme pour la mesure des variables d'un datatest
     def _hist_chart(
@@ -90,20 +97,11 @@ class Visualizer:
             template=template,
             color_discrete_sequence=colors,
         )
+        return st.plotly_chart(fig)
 
     # Méthode pour la part de chaque variable
     def _pie_chart(self, col1: str, col2: str, title: str, template="plotly_dark"):
         fig = px.pie(
             self.dataFrame, names=col1, values=col2, title=title, template=template
         )
-
-
-"""fig1 = px.bar(
-    demo_df,
-    x="Langage",
-    y="Utilisateurs GitHub (k)",
-    color="Langage",
-    title="🚀 Popularité GitHub par langage",
-    template="plotly_dark",
-    color_discrete_sequence=cyberpunk_colors,
-)"""
+        return st.plotly_chart(fig)

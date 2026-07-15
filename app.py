@@ -126,33 +126,19 @@ if section == "Accueil":
 
         fig = Visualizer(demo_df)
         fig._bar_chart(demo_df.columns[0], demo_df.columns[2], "popularité")
-        st.plotly_chart(fig, use_container_width=True)
 
         # 2️⃣ Courbe interactive
-        fig2 = px.line(
-            demo_df,
-            x="Langage",
-            y="Likes (k)",
-            markers=True,
-            title="📈 Likes GitHub par langage",
-            template="plotly_dark",
-            color_discrete_sequence=cyberpunk_colors,
+        fig._line_chart(
+            demo_df.columns[0], demo_df.columns[3], "📈 Likes GitHub par langage"
         )
-        st.plotly_chart(fig2, use_container_width=True)
 
         # 3️⃣ Scatter futuriste
-        fig3 = px.scatter(
-            demo_df,
-            x="Clients",
-            y="Années pour devenir Senior",
-            size="Utilisateurs GitHub (k)",
-            color="Langage",
-            hover_name="Domaine",
-            title="🌌 Clients vs Années pour devenir Senior",
-            template="plotly_dark",
-            color_discrete_sequence=cyberpunk_colors,
+        fig._scatter(
+            demo_df.columns[4],
+            demo_df.columns[5],
+            "🌌 Clients vs Années pour devenir Senior",
+            demo_df.columns[3],
         )
-        st.plotly_chart(fig3, use_container_width=True)
 
         # 4️⃣ part de chaque language sur github
         fig4 = px.pie(
