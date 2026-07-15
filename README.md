@@ -38,8 +38,10 @@ L'objectif du projet est de fournir une solution simple, rapide et évolutive pe
 - Python
 - Pandas
 - NumPy
-- Matplotlib
+- Polars
 - Streamlit
+- Plotly
+- Python - magic
 
 ---
 
