@@ -14,7 +14,7 @@ from utils.data_cleaner import (
     fill_missing_values,
 )
 from utils.info import get_info
-from utils.plotly_graphs import Visualizer
+from utils.visualiseur.plotly_graphs import Visualizer
 
 # ===========================================
 # CONFIGURATION DE LA PAGE

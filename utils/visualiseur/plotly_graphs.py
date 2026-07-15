@@ -1,5 +1,6 @@
 import plotly.express as px
 import plotly.graph_objects as go
+from color import cyberpunk_colors
 
 
 # classe principale des graphiques basiques
