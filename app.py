@@ -5,9 +5,8 @@ import pandas as pd
 import random
 import plotly.express as px
 
-# ==========================================
-# IMPORTATION DE MES MODULES (MON CERVEAU PANDAS)
-# ==========================================
+# IMPORTATION DE MES MODULES (MON CERVEAU PANDAS & GRAPHIQUE)
+
 from utils.load_file import load_file
 from utils.data_cleaner import (
     get_cleaning_report,
@@ -15,6 +14,7 @@ from utils.data_cleaner import (
     fill_missing_values,
 )
 from utils.info import get_info
+from utils.plotly_graphs import Visualizer
 
 # ===========================================
 # CONFIGURATION DE LA PAGE
@@ -33,6 +33,7 @@ h1 { color: #4CAF50; }
 """,
     unsafe_allow_html=True,
 )
+
 
 # ==========================================
 # LA SIDEBAR (MENU DE NAVIGATION)
@@ -81,6 +82,7 @@ if section == "Accueil":
     5. Explorez les dev ressources : [Firebase](https://firebase.google.com)  |  [Copilot](https://copilot.microsoft.com)
     """)
 
+    # variable d'upload
     uploaded_file = st.file_uploader(
         "📂 Importer un fichier CSV ou Excel (plus tard PDF et Word)",
         type=["csv", "xlsx"],
@@ -89,7 +91,7 @@ if section == "Accueil":
     # --- Démo avant upload ---
     if not uploaded_file and "df" not in st.session_state:
         st.info(
-            "💡 Pas encore de fichier ? Voici une démo futuriste pour découvrir l’application."
+            "💡 Pas encore de fichier ? Voici une démo  pour découvrir l’application."
         )
 
         demo_df = pd.DataFrame(
@@ -250,7 +252,9 @@ python main.py
 
             # --- Aperçu des données ---
             st.subheader("👀 Aperçu rapide du DataFrame")
+            st.write("Voici les premieres ligne de votre dataframe")
             st.dataframe(df_actuel.head(5), use_container_width=True)
+            st.write("Les dernires lignes de votre dataframe")
             st.dataframe(df_actuel.tail(5), use_container_width=True)
 
             # --- Graphique automatique ---
@@ -419,8 +423,7 @@ elif section == "Synthèse IA":
         "Cette section est en cours de développement. Bientôt, vos calculs Pandas et vos modèles IA seront injectés ici pour générer des synthèses automatiques."
     )
 
-    # Démo fictive pour rassurer l'utilisateur
-    st.subheader("🎬 Démonstration IA fictive")
+    # Démo fictive pour rassurer l'utilisateu    st.subheader("🎬 Démonstration IA fictive")
     salutation = st.text_input("User : ")
     if salutation:
         st.write(

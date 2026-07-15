@@ -13,7 +13,7 @@ try:
             "maximum": max,
             "minimum": min,
             "total": sum,
-            "moyenne": np.mean,
+            "moyenne": np.mean(),
         }
     )
     print(group)
