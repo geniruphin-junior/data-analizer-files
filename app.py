@@ -141,13 +141,11 @@ if section == "Accueil":
         )
 
         # 4️⃣ part de chaque language sur github
-        fig4 = px.pie(
-            demo_df,
-            names=demo_df.columns[0],
-            values=demo_df.columns[2],
+        fig._pie_chart(
+            col1=demo_df.columns[0],
+            col2=demo_df.columns[2],
             title="Part de chaque langage sur github",
         )
-        st.plotly_chart(fig4, use_container_width=True)
 
         # --- IA fictive ---
         st.subheader("🤖 Simulation IA")
@@ -208,11 +206,12 @@ python main.py
 
             # --- Métriques globales ---
             st.subheader("⚙️ Métriques globales de mon Data Cleaner")
-            col1, col2, col3, col4 = st.columns(4)
+            col1, col2, col3, col4, col5 = st.columns(5)
             col1.metric("Lignes", f"{report['rows']:,}")
             col2.metric("Colonnes", report["columns"])
             col3.metric("Cases vides", report["missing_values"])
             col4.metric("Doublons détectés", report["duplicates"])
+            col5.metric("Memoire Usage/Mo", report["memory_mb_used"])
 
             # --- Boutons de nettoyage ---
             st.subheader("🧹 Nettoyage rapide")
