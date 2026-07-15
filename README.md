@@ -64,16 +64,15 @@ L'objectif du projet est de fournir une solution simple, rapide et évolutive pe
 
 ## 🔄 Développement en cours
 
-Nous travaillons actuellement sur :
+Nous comptons travailler sur :
 
-- [ ] Support des fichiers PDF
+- [ ] Support des fichiers PDF avec des tests
 - [ ] Support des fichiers DOCX
-- [ ] Génération de rapports avancés
-- [ ] Optimisation des performances
+- [ ] Optimisation des performances avec décorateurs
 
 ### 🤖 Intelligence Artificielle
 
-Une architecture basée sur les **LLMs** est actuellement en préparation.
+Une architecture basée sur une API de modèle Deepseek est actuellement en préparation.
 
 Dans les prochaines semaines, le projet intégrera une **API d'intelligence artificielle** afin de proposer des fonctionnalités de synthèse et d'analyse assistée directement depuis l'application.
 
@@ -93,7 +92,7 @@ streamlit run app.py
 
 ---
 
-## 🤲 Contribuer
+## 🤲 Contributions
 
 Les contributions, suggestions et retours sont toujours les bienvenus.
 
