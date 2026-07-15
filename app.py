@@ -241,7 +241,10 @@ python main.py
                 "Voulez vous visualiser combien des lignes pour avoir une vue d'ensemble sur votre fichier : ?",
             )
 
-            st.dataframe(df_actuel.head(), use_container_width=True)
+            st.dataframe(
+                df_actuel.head(count) if count > 5 else df_actuel.head(),
+                use_container_width=True,
+            )
             st.write("Les dernires lignes de votre dataframe")
             st.dataframe(df_actuel.tail(), use_container_width=True)
 
@@ -479,7 +482,7 @@ elif section == "collaboration":
     )
     st.dataframe(demo_collab, use_container_width=True)
     st.write(
-        "**DataBot : ** et voici à quoi ressemble un code de data pour faire de bonnes analyses "
+        "**DataBot : ** Et voici à quoi ressemble un code de data pour faire de bonnes analyses plutot simple n'est ce pas\n car avec nos outils vous n'allez pas juste les utiliser mais vous aller connaitre leurs structures internes et meme les modifier selon vos goûts"
     )
     st.code(
         "import pandas as pd\nimport numpy as np\nimport plotly.express as px\ndf = pd.DataFrame(demo_collab)\ndf['contributions'] = np.linspace(1,10,7)\nfig = px.bar(df,x='Utilisateur',y='contributions'title='Les contributeurs et leurs contributions')\nfig.show()",
