@@ -236,10 +236,15 @@ python main.py
 
             # --- Aperçu des données ---
             st.subheader("👀 Aperçu rapide du DataFrame")
-            st.write("Voici les premieres ligne de votre dataframe")
-            st.dataframe(df_actuel.head(5), use_container_width=True)
+            st.write("Voici les premieres ligne de votre dataframe ")
+            count = int(
+                st.number_input(
+                    "Voulez vous visualiser combien des lignes pour avoir une vue d'ensemble sur votre fichier : ?"
+                )
+            )
+            st.dataframe(df_actuel.head(count), use_container_width=True)
             st.write("Les dernires lignes de votre dataframe")
-            st.dataframe(df_actuel.tail(5), use_container_width=True)
+            st.dataframe(df_actuel.tail(count), use_container_width=True)
 
             # --- Graphique automatique ---
             st.subheader("📉 Aperçu graphique automatique")
