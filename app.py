@@ -124,17 +124,9 @@ if section == "Accueil":
             "#FF0033",
         ]
 
-        # 1️⃣ Barres néon futuristes
-        fig1 = px.bar(
-            demo_df,
-            x="Langage",
-            y="Utilisateurs GitHub (k)",
-            color="Langage",
-            title="🚀 Popularité GitHub par langage",
-            template="plotly_dark",
-            color_discrete_sequence=cyberpunk_colors,
-        )
-        st.plotly_chart(fig1, use_container_width=True)
+        fig = Visualizer(demo_df)
+        fig._bar_chart(demo_df.columns[0], demo_df.columns[2], "popularité")
+        st.plotly_chart(fig, use_container_width=True)
 
         # 2️⃣ Courbe interactive
         fig2 = px.line(
