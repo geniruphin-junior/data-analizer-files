@@ -116,4 +116,4 @@ N'hésitez pas à :
 
 ## ⭐ Soutenir le projet
 
-Si DataAnalyzer Files vous semble utile ou intéressant, pensez à lui attribuer une étoile. Cela aide le projet à gagner en visibilité et motive son développement futur.
+Si DataAnalyzer Files vous semble utile ou intéressant, pensez à lui attribuer une étoile. Cela aide le projet à gagner en visibilité et motive son développement futur mais aussi si vous souhaiter commencer un projet simple data mon fichier setup.py fait pour vous une structure simple propre pour un premier projet.
