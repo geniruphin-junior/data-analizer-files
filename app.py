@@ -58,7 +58,7 @@ with st.sidebar:
         "- [Scikit-learn](https://scikit-learn.org)\n"
         "- [TensorFlow](https://www.tensorflow.org)\n"
         "- [PyTorch](https://pytorch.org)\n"
-        "- [Dépot GitHub du projet](https://github.geniruphin-junior/data-files.git)"
+        "- [Dépot GitHub du projet]( https://github.com/geniruphin-junior/data-analizer-files.git)"
     )
 
 # ==========================================
@@ -226,11 +226,17 @@ pip install -r requirements.txt
 
             # --- Boutons de nettoyage ---
             st.subheader("🧹 Nettoyage rapide")
-            if st.button("🗑️ Enlever les doublons"):
-                df_actuel = delete_duplicates(df_actuel)
-                st.session_state["df"] = df_actuel
-                st.success("✅ Doublons supprimés.")
-
+            if col4 != 0:
+                try:
+                    if st.button("🗑️ Enlever les doublons!"):
+                        df_actuel = delete_duplicates(df_actuel)
+                        st.session_state["df"] = df_actuel
+                        st.success("✅ Doublons supprimés.")
+                except:
+                    st.text("no doublons déetected")
+                    
+                
+                
             if st.button("🧩 Remplir les valeurs vides"):
                 df_actuel = fill_missing_values(df_actuel)
                 st.session_state["df"] = df_actuel
@@ -299,7 +305,7 @@ elif section == "📊graphiques":
         cols_num = df.select_dtypes(
             include="number"
         ).columns.tolist()  # je les transforme en liste
-        cols_str = df.select_dtypes(exclude="number").columns.tolist()
+        cols_str = df.select_dtypes(include="number").columns.tolist()
 
         st.subheader("🎛️ Configuration du graphique")
         # selection des colonnes pour visualisation
