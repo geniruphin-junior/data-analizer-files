@@ -207,24 +207,31 @@ python main.py
             # --- Métriques globales ---
             st.subheader("⚙️ Métriques globales de mon Data Cleaner")
             col1, col2, col3, col4, col5 = st.columns(5)
-            col1.metric("Lignes", f"{report['rows']:,}")
-            col2.metric("Colonnes", report["columns"])
-            col3.metric("Cases vides", report["missing_values"])
-            col4.metric("Doublons détectés", report["duplicates"])
-            col5.metric("Memoire Usage/Mo", report["memory_mb_used"])
+            lignes = col1.metric("Lignes", f"{report['rows']:,}")
+            colonnes = col2.metric("Colonnes", report["columns"])
+            cases = col3.metric("Cases vides", report["missing_values"])
+            doublons = col4.metric("Doublons détectés", report["duplicates"])
+            ram = col5.metric("Memoire Usage/Mo", report["memory_mb_used"])
 
-            # --- Boutons de nettoyage ---
-            st.subheader("🧹 Nettoyage rapide")
-            if st.button("🗑️ Enlever les doublons"):
-                df_actuel = delete_duplicates(df_actuel)
-                st.session_state["df"] = df_actuel
-                st.success("✅ Doublons supprimés.")
+            # --- Boutons de nettoyage et la logique de leurs affichage ---
+            if report["missing_values"] > 0 or report["duplicates"] > 0:
+                st.subheader("🧹 Nettoyage rapide")
+                if report["duplicates"] > 0:
+                    if st.button("🗑️ Enlever les doublons"):
+                        df_actuel = delete_duplicates(df_actuel)
+                        st.session_state["df"] = df_actuel
+                        st.success("✅ Doublons supprimés.")
 
-            if st.button("🧩 Remplir les valeurs vides"):
-                df_actuel = fill_missing_values(df_actuel)
-                st.session_state["df"] = df_actuel
-                st.success(
-                    "✅ Valeurs vides remplacées (0 pour numériques, 'indefinite' pour chaînes)."
+                if report["missing_values"] > 0:
+                    if st.button("🧩 Remplir les valeurs vides"):
+                        df_actuel = fill_missing_values(df_actuel)
+                        st.session_state["df"] = df_actuel
+                        st.success(
+                            "✅ Valeurs vides remplacées (0 pour numériques, 'indefinite' pour chaînes)."
+                        )
+            else:
+                st.info(
+                    "how,Bravo votre fichier est deja propre plus bésoin de le nettoyer"
                 )
 
             # --- Aperçu des données ---
