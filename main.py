@@ -1,5 +1,14 @@
 import pandas as pd
-from pathlib import Path
+from utils.data_cleaner import (
+    get_missing_values,
+    missing_percentage,
+    get_duplicates_counts,
+    get_data_types,
+    get_cleaning_report,
+    fill_missing_values,
+    drop_missing_values,
+    delete_duplicates,
+)
 import os
 from utils.load_file import load_file
 
@@ -10,7 +19,8 @@ root = os.path.join(folder, file)
 try:
     if os.path.exists(root):
         df = load_file(root)
-        print(df)
+        print("Voici les metriques globales de votre fichier :\n")
+
     else:
         raise FileNotFoundError
 except FileNotFoundError:
