@@ -10,6 +10,7 @@ root = os.path.join(folder, file)
 try:
     if os.path.exists(root):
         df = load_file(root)
+        print(df)
     else:
         raise FileNotFoundError
 except FileNotFoundError:
