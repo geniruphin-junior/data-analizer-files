@@ -1,1 +1,0 @@
-.sort_values(by="nom de la colone", ascending=True) # pour ranger les elements
