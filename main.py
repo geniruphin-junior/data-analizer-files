@@ -20,6 +20,8 @@ try:
     if os.path.exists(root):
         df = load_file(root)
         print("Voici les metriques globales de votre fichier :\n")
+        report = get_cleaning_report(df)
+        resumé = f"Lignes : {report.rows}\ncollones :{report.columns} \nvaleures manquantes : {report.missing_values}\ndoublons : {report.duplicates}\nusage mémoire : {report.memory_mb_used}"
 
     else:
         raise FileNotFoundError
