@@ -21,7 +21,11 @@ try:
         df = load_file(root)
         print("Voici les metriques globales de votre fichier :\n")
         report = get_cleaning_report(df)
-        resumé = f"Lignes : {report.rows}\ncollones :{report.columns} \nvaleures manquantes : {report.missing_values}\ndoublons : {report.duplicates}\nusage mémoire : {report.memory_mb_used}"
+        resumé = f"Lignes : {report["rows"]}\ncollones :{report["columns"]} \nvaleures manquantes : {report["missing_values"]}\ndoublons : {report["duplicates"]}\nusage mémoire : {report["memory_mb_used"]}"
+        print(resumé)
+        print(
+            f"👀 jetter un oeil à votre fichier voici les premieres lignes :\n{df.head()}"
+        )
 
     else:
         raise FileNotFoundError
