@@ -7,3 +7,4 @@ Pour utiliser main.py pour des analyses rapides dans la console il faut :
     * Interface Utilisateur
     * seulement une petite synthèse des vos fichiers
     
+
