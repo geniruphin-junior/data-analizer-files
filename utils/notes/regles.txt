@@ -1,0 +1,9 @@
+Pour utiliser main.py pour des analyses rapides dans la console il faut : 
+- Installer les librairies comme pandas,numpy et polars ;
+- utiliser la commande python main.py pour lancer l'app ;
+- Sachez bien que cette version en ligne de commande ne possede pas :
+    * De visualisation
+    * Analyse détaillée
+    * Interface Utilisateur
+    * seulement une petite synthèse des vos fichiers
+    
