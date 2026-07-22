@@ -26,7 +26,11 @@ try:
         print(
             f"👀 jetter un oeil à votre fichier voici les premieres lignes :\n{df.head()}"
         )
-
+        missing = delete_duplicates(df)
+        missing = drop_missing_values(df)
+        print(
+            f"Après nettoyage des cases vides, et des doublons voici un petit appercu sur vos données : \n{missing.head()}"
+        )
     else:
         raise FileNotFoundError
 except FileNotFoundError:
