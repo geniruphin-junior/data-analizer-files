@@ -14,10 +14,10 @@ from utils.data_cleaner import (
 
 # package pour chargement des fichiers
 from utils.load_file import load_file
-import os, sys
+import os, sys  # systeme
 
 verify = input(
-    "Bienvenue sur le mini analyseur virtuel tapez q pour sortir et c pour continuer: "
+    "Bienvenue sur le mini analyseur virtuel tapez q pour sortir et une autre lettre que q pour continuer: "
 )
 if verify == "q":
     sys.exit()
