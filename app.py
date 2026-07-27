@@ -238,7 +238,7 @@ python main.py
             st.subheader("👀 Aperçu rapide du DataFrame")
             st.write("Voici les premieres lignes de votre dataframe ")
             count = st.number_input(
-                "Voulez vous visualiser combien des lignes pour avoir une vue d'ensemble sur votre fichier : ?",
+                "Voulez-vous visualiser combien des lignes pour avoir une vue d'ensemble sur votre fichier : ?",
             )
 
             st.dataframe(
@@ -275,9 +275,10 @@ python main.py
                 )
                 st.plotly_chart(fig_auto, use_container_width=True)
             else:
-                st.info(
-                    "Votre fichier ne permet pas de genérer des graphiques automatiques, consulter la section graphique"
-                )
+                info, button = st.columns(2)
+
+                info.info("Votre fichier ne permet pas de genérer des graphiques")
+                button.button("Graphiques")
 
 
 # ==========================================
