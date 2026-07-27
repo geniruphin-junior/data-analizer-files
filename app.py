@@ -26,7 +26,7 @@ st.markdown(
     """
 <style>
 .main { background-color: #0E1117; color: white; }
-.stButton>button { width: 100%; border-radius: 10px; height: 50px; font-size: 18px; font-weight: bold; }
+.stButton>button { width: 100%; border-radius: 10px; height: 50px; font-size: 18px; font-weight: bold;margin:auto 2rem }
 .sidebar .sidebar-content { background-color: #111827; }
 h1 { color: #4CAF50; }
 </style>
@@ -421,17 +421,17 @@ elif section == "Synthèse IA":
         st.write(
             "**IA DataBot :** Bonjour Ruphin 👋, j’ai analysé ton DataFrame. Voici mes observations :"
         )
-    question = st.text_input("Ruphin : ")
-    if question:
-        st.success(
-            "✅ Les données montrent une tendance positive sur la colonne 'Ventes'."
-        )
-        st.warning(
-            "⚠️ Attention : la colonne 'Croissance (%)' présente des valeurs manquantes qui pourraient fausser l'analyse."
-        )
-        st.info(
-            "💡 Pas pour l'insatant bientôt, cette section utilisera une clé API pour générer des synthèses réelles basées sur vos données."
-        )
+        question = st.text_input("Ruphin : ")
+        if question:
+            st.success(
+                "✅ Les données montrent une tendance positive sur la colonne 'Ventes'."
+            )
+            st.warning(
+                "⚠️ Attention : la colonne 'Croissance (%)' présente des valeurs manquantes qui pourraient fausser l'analyse."
+            )
+            st.info(
+                "💡 Pas pour l'insatant bientôt, cette section utilisera une clé API pour générer des synthèses réelles basées sur vos données."
+            )
 # ==========================================
 # PAGE 5 : COLLABORATION
 # ==========================================
