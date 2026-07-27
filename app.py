@@ -236,7 +236,7 @@ python main.py
 
             # --- Aperçu des données ---
             st.subheader("👀 Aperçu rapide du DataFrame")
-            st.write("Voici les premieres ligne de votre dataframe ")
+            st.write("Voici les premieres lignes de votre dataframe ")
             count = st.number_input(
                 "Voulez vous visualiser combien des lignes pour avoir une vue d'ensemble sur votre fichier : ?",
             )
