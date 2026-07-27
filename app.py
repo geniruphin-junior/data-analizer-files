@@ -242,7 +242,7 @@ python main.py
             )
 
             st.dataframe(
-                df_actuel.head(count) if count > 5 else df_actuel.head(),
+                df_actuel.head(int(count)) if count > 5 else df_actuel.head(),
                 use_container_width=True,
             )
             st.write("Les dernires lignes de votre dataframe")
