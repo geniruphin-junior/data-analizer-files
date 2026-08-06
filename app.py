@@ -54,12 +54,9 @@ with st.sidebar:
     st.subheader("🔗 Liens annexes")
     st.markdown(
         "- [Streamlit](https://streamlit.io)\n"
-        "- [Pandas](https://pydata.org)\n"
-        "- [NumPy](https://numpy.org)\n"
-        "- [Matplotlib](https://matplotlib.org)\n"
-        "- [Scikit-learn](https://scikit-learn.org)\n"
-        "- [TensorFlow](https://www.tensorflow.org)\n"
-        "- [PyTorch](https://pytorch.org)\n"
+        "- [Ruphy.com](https://github.io/my_site_web)\n"
+        "- [Redit](https://redit.com/geniruphin)\n"
+        "- [Devchat](https://devchat-ruphin.web.app)\n"
         "- [Dépot GitHub du projet](https://github.geniruphin-junior/data-files.git)"
     )
 
