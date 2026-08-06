@@ -63,7 +63,7 @@ with st.sidebar:
 # ==========================================
 # PAGE 1 : ACCUEIL (Guide simple)
 # ==========================================
-if section == "Accueil":
+if section.endswith("Accueil"):
     st.title("🚀 Bienvenue sur Data-Analyzer Files")
     st.write(
         "**L’assistant intelligent pour explorer, nettoyer et visualiser vos données rapidement.**"
@@ -281,7 +281,7 @@ python main.py
 # ==========================================
 # PAGE 2 : 📊 GRAPHIQUES (INTERACTIF & STABLE) EN ATTENTE ET MODIFICATION
 # ==========================================
-elif section == "📊graphiques":
+elif section.endswith("graphiques"):
     st.title("📊 Graphiques dynamiques et interactifs")
 
     # Démo fictive si il n'ya pas d'upload de fichier
@@ -341,7 +341,7 @@ elif section == "📊graphiques":
 # ==========================================
 # PAGE 3 : ANALYSE DÉTAILLÉE
 # ==========================================
-elif section == "Analyse détaillée":
+elif section.endswith("Analyse détaillée"):
     st.title("🔬 Analyse détaillée & Statistiques avancées")
 
     # Si aucun fichier n'est chargé, je bloque poliment
@@ -375,7 +375,7 @@ elif section == "Analyse détaillée":
         types_df = pd.DataFrame(
             {
                 "Type de données": info_calculée["dtypes"],
-                "Cases Manquantes": info_calculée["valeures manquantes"],
+                "Cases Manquantes": info_calculée["missing_values"],
                 "Doublons": info_calculée["Doublons"],
             }
         )
@@ -404,7 +404,7 @@ elif section == "Analyse détaillée":
 # ==========================================
 # PAGE 4 : SYNTHÈSE IA (EN ATTENTE DE SCRIPT)
 # ==========================================
-elif section == "Synthèse IA":
+elif section.endswith("Synthèse IA"):
     st.title("🤖 Mode Intelligence Artificielle")
 
     # Simulation IA futuriste
@@ -432,7 +432,7 @@ elif section == "Synthèse IA":
 # ==========================================
 # PAGE 5 : COLLABORATION
 # ==========================================
-elif section == "collaboration":
+elif section.endswith("collaboration"):
     st.title("🤝 Collaboration & Partage")
     st.write(
         "Cette section permet de travailler en équipe sur vos données ou de collaborer avec nous."
