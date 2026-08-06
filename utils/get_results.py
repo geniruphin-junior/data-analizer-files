@@ -21,6 +21,7 @@ def get_info(df: pd.DataFrame, group_col=None, target_col=None, max_rows=1000):
         "missing_values": df.isna().sum().to_dict(),
         "head": df.head(10).to_dict(orient="records"),  # utile pour streamlit
         "tail": df.tail(5).to_dict(orient="records"),  # utile pour streamlit
+        "Doublons": df.duplicated().sum(),
     }
 
     # stats numériques
