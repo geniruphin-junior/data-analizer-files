@@ -1,0 +1,26 @@
+Pour utiliser l'application Data-analyser suivez les regles suivantes:
+    1.REGLES
+    
+    - installer les librairies necessaires avec le fichier requitrements.txt
+    - avoir des bonnes bases en python
+    - lire la doc sur github avec le lien https:github.com/geniruphin-junior/Data_analyser-files.git
+    
+    2. COMMENT UTILISER ?
+
+    l'application est simple et a comme but simple d'avoir en qualques minutes,
+    le rendu et vue d'ensemble sur les données de son fichier pour connaitre:
+        - son contenu
+        - son volume
+        - son comportement
+        - ses statistiques de ses données
+        - classification
+    Ainsi l'application offre une visualisation interactive avec des graphiques plotly,
+    et une vue exacte et futuriste en tables élegantes avec streamlit.
+    L'utilisation est simple avec un bouton upload et l'app faitt le reste pour vous
+
+    3.COMMENT SOUTENIR OU DONNER UN COUP DE MAIN ?
+
+    Que ça soit la premiere ou la deuxieme action , vous nous rendez vraiment service ,
+    pour soutenir le projet il suffit soit d'y contribuer avec github ou de l'utiliser et signaler les bugs,
+    anomalies,ou des nouveautés qui pourrons plaire merci à vous et n'hésiiter pas de mettre une ⭐ sur le dépot,
+    pour nous soutenir encore et encore
