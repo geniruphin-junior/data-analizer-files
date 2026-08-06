@@ -38,30 +38,26 @@ h1 { color: #4CAF50; }
 # ==========================================
 # LA SIDEBAR (MENU DE NAVIGATION)
 # ==========================================
-with st.sidebar:
-    st.title("📌 Menu & navigation")
-    section = st.radio(
-        "Aller vers",
-        [
-            "Accueil",
-            "📊graphiques",
-            "Analyse détaillée",
-            "Synthèse IA",
-            "collaboration",
-        ],
-    )
-    st.divider()
-    st.subheader("🔗 Liens annexes")
-    st.markdown(
-        "- [Streamlit](https://streamlit.io)\n"
-        "- [Pandas](https://pydata.org)\n"
-        "- [NumPy](https://numpy.org)\n"
-        "- [Matplotlib](https://matplotlib.org)\n"
-        "- [Scikit-learn](https://scikit-learn.org)\n"
-        "- [TensorFlow](https://www.tensorflow.org)\n"
-        "- [PyTorch](https://pytorch.org)\n"
-        "- [Dépot GitHub du projet](https://github.geniruphin-junior/data-files.git)"
-    )
+section = st.sidebar.radio(
+    "📂 <span style='color: #0066CC;'>Choisissez une option :</span>",
+    ["Dashboard", "Prise de Notes", "Mode Quiz", "Performances", "API", "Docs"],
+    format_func=lambda x: f"🔹 {x}",
+    index=0,
+    label_visibility="hidden",
+    key="menu_radio",
+)
+st.divider()
+st.subheader("🔗 Liens annexes")
+st.markdown(
+    "- [Streamlit](https://streamlit.io)\n"
+    "- [Pandas](https://pydata.org)\n"
+    "- [NumPy](https://numpy.org)\n"
+    "- [Matplotlib](https://matplotlib.org)\n"
+    "- [Scikit-learn](https://scikit-learn.org)\n"
+    "- [TensorFlow](https://www.tensorflow.org)\n"
+    "- [PyTorch](https://pytorch.org)\n"
+    "- [Dépot GitHub du projet](https://github.geniruphin-junior/data-files.git)"
+)
 
 # ==========================================
 # PAGE 1 : ACCUEIL (Guide simple)
