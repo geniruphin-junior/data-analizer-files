@@ -392,7 +392,7 @@ elif section.endswith("Analyse détaillée"):
             # Graphique basé sur les moyennes
             st.bar_chart(df_group.set_index(group_col)["mean"])
 
-            sts.pie_chart(df_group.set_index(group_col)["mean"])
+            # st.pie_chart(df_group.set_index(group_col)["mean"])
 
             # Mémoire session_state : je garde le dernier groupby
             st.session_state["last_analysis"] = {
