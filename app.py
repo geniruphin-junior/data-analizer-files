@@ -43,11 +43,11 @@ with st.sidebar:
     section = st.radio(
         "Aller vers",
         [
-            "Accueil",
-            "📊graphiques",
-            "Analyse détaillée",
-            "Synthèse IA",
-            "collaboration",
+            "🏠 Accueil",
+            "📊 graphiques",
+            "👁‍🗨 Analyse détaillée",
+            "👂 Synthèse IA",
+            "🤝 collaboration",
         ],
     )
     st.divider()
