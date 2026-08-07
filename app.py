@@ -306,10 +306,13 @@ elif section.endswith("graphiques"):
         st.subheader("🎛️ Configuration du graphique")
 
         # selection des colonnes pour visualisation
-        col_x = st.selectbox("Choisir une colonne catégorielle (X)", cols_str)
-        col_y = st.selectbox("Choisir une colonne numérique (Y)", cols_num)
+        col_x = st.selectbox("Choisir une colonne catégorielle (X)", df.columns)
+        col_y = st.selectbox("Choisir une colonne numérique (Y)", df.columns)
+        if col_x in cols_num and col_y in cols_str:
+            
 
-        grouped = (
+
+        """grouped = (
             df.groupby(col_x)[col_y]
             .mean()
             .sort_values(ascending=False)  # du plus grand au plus petit
@@ -333,7 +336,7 @@ elif section.endswith("graphiques"):
         ]  # calcul  de coloration
 
         st.info(f"📊 Graphique généré : **{col_y}** par **{col_x}**")
-        st.bar_chart(grouped, y=col_y, color="Couleur")
+        st.bar_chart(grouped, y=col_y, color="Couleur")"""
 
         # --- Mémoire session_state ---
         st.session_state["last_graph"] = {"x": col_x, "y": col_y}
