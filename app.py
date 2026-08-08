@@ -308,9 +308,13 @@ elif section.endswith("graphiques"):
         # selection des colonnes pour visualisation
         col_x = st.selectbox("Choisir une colonne catégorielle (X)", df.columns)
         col_y = st.selectbox("Choisir une colonne numérique (Y)", df.columns)
-        if col_x in cols_num and col_y in cols_str:
-            
-
+        fig = Visualizer(df)
+        if (col_x in cols_num and col_y in cols_str) or (
+            col_x in cols_str and col_y in cols_num
+        ):
+            fig._bar_chart(
+                col1=col_x, col2=col_y, title=f"barchart de {colx} par {col_y}"
+            )
 
         """grouped = (
             df.groupby(col_x)[col_y]
