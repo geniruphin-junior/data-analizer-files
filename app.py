@@ -315,6 +315,19 @@ elif section.endswith("graphiques"):
             fig._bar_chart(
                 col1=col_x, col2=col_y, title=f"barchart de {colx} par {col_y}"
             )
+            fig._pie_chart(col1=col_x, col2=col_y, title="part de chaque variable")
+        elif col_x in cols_num and col_y in cols_str:
+            fig._scatter(
+                col1=col_x,
+                col2=col_y,
+                title=f"Scatter de {col_x} par {col_y}",
+                colsize=cols_num[4],
+            )
+        elif col_x in cols_str and col_y in cols_str:
+            fig._hist_chart(col=col_x, title=f"distribution de la variable {col_x}")
+            fig._hist_chart(col=col_y, title=f"distribution de la variable {col_y}")
+        else:
+            st.info("choisisais d'autres colonnes pour generer des graphiques")
 
         """grouped = (
             df.groupby(col_x)[col_y]

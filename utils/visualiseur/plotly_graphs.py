@@ -25,7 +25,7 @@ class Visualizer:
         col1: str,
         col2: str,
         title: str,
-        colsize,
+        colsize: None,
         template="plotly_dark",
         colors=cyberpunk_colors,
     ):
