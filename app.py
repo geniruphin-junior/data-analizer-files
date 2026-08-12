@@ -323,7 +323,7 @@ elif section.endswith("graphiques"):
                 colsize=cols_num[0],
             )
             if st.button("show corr"):
-                correlation = (df[[col_x,col_y]].corr()*100).iloc([1:1])
+                correlation = (df[[col_x, col_y]].corr() * 100).iloc([1, 1])
                 st.info(
                     f"la correlation entre la colonne {col_x} et {col_y} est de {correlation}"
                 )
