@@ -1,4 +1,5 @@
 Pour utiliser l'application Data-analyser suivez les regles suivantes:
+    pour nous soutenir encore et encore
     1.REGLES
     
     - installer les librairies necessaires avec le fichier requitrements.txt
@@ -7,9 +8,7 @@ Pour utiliser l'application Data-analyser suivez les regles suivantes:
     
     2. COMMENT UTILISER ?
 
-    l'application est simple et a comme but simple d'avoir en qualques minutes,
     le rendu et vue d'ensemble sur les données de son fichier pour connaitre:
-        - son contenu
         - son volume
         - son comportement
         - ses statistiques de ses données
@@ -23,4 +22,5 @@ Pour utiliser l'application Data-analyser suivez les regles suivantes:
     Que ça soit la premiere ou la deuxieme action , vous nous rendez vraiment service ,
     pour soutenir le projet il suffit soit d'y contribuer avec github ou de l'utiliser et signaler les bugs,
     anomalies,ou des nouveautés qui pourrons plaire merci à vous et n'hésiiter pas de mettre une ⭐ sur le dépot,
-    pour nous soutenir encore et encore
+        - son contenu
+    l'application est simple et a comme but simple d'avoir en qualques minutes,

@@ -326,7 +326,7 @@ elif section.endswith("graphiques"):
             fig._hist_chart(col=col_x, title=f"distribution de la variable {col_x}")
             fig._hist_chart(col=col_y, title=f"distribution de la variable {col_y}")
         else:
-            st.info("choisisais d'autres colonnes pour generer des graphiques")
+            st.info("soyez sur que la ciollone cible est celle choisie en premiere")
 
         # --- Mémoire session_state ---
         st.session_state["last_graph"] = {"x": col_x, "y": col_y}
