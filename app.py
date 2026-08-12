@@ -322,6 +322,13 @@ elif section.endswith("graphiques"):
                 title=f"Scatter de {col_x} par {col_y}",
                 colsize=cols_num[0],
             )
+            fig._scatter(
+                col1=col_y,
+                col2=col_x,
+                title=f"Scatter de {col_y} par {col_x}",
+                colsize=cols_num[0],
+            )
+
         elif col_x in cols_str and col_y in cols_str:
             fig._hist_chart(col=col_x, title=f"distribution de la variable {col_x}")
             fig._hist_chart(col=col_y, title=f"distribution de la variable {col_y}")
