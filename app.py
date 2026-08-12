@@ -324,6 +324,7 @@ elif section.endswith("graphiques"):
             )
             if st.button("show corr"):
                 correlation = df[[col_x, col_y]].corr() * 100
+                true_corr = correlation[1:1]
                 st.info(
                     f"la correlation entre la colonne {col_x} et {col_y} est de {correlation}"
                 )
