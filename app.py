@@ -325,9 +325,9 @@ elif section.endswith("graphiques"):
             if st.button("show corr"):
                 correlation = pd.DataFrame(df[[col_x, col_y]].corr() * 100)
                 st.dataframe(correlation)
-                true_corr = correlation.iloc(0, 1)
+
                 st.info(
-                    f"la correlation entre la colonne {col_x} et {col_y} est de {true_corr}%"
+                    f"la correlation entre la colonne {col_x} et {col_y} est de {list(correlation.charges)[0]}%"
                 )
 
             fig._scatter(
