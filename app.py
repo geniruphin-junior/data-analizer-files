@@ -323,17 +323,18 @@ elif section.endswith("graphiques"):
                 colsize=cols_num[0],
             )
             if st.button("show corr"):
-                correlation = df[[col_x, col_y]].corr() * 100
-                true_corr = correlation[1:1]
+                correlation = pd.DataFrame(df[[col_x, col_y]].corr() * 100)
+                st.dataframe(correlation)
+                true_corr = correlation.iloc(0, 1)
                 st.info(
-                    f"la correlation entre la colonne {col_x} et {col_y} est de {correlation}"
+                    f"la correlation entre la colonne {col_x} et {col_y} est de {true_corr}%"
                 )
 
             fig._scatter(
                 col1=col_y,
                 col2=col_x,
                 title=f"Scatter de {col_y} par {col_x}",
-                colsize=cols_num[0],
+                colsize=cols_num[1],
             )
 
         elif col_x in cols_str and col_y in cols_str:
