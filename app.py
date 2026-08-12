@@ -322,6 +322,11 @@ elif section.endswith("graphiques"):
                 title=f"Scatter de {col_x} par {col_y}",
                 colsize=cols_num[0],
             )
+            if st.button("show corr"):
+                st.info(
+                    f"la correlation entre la colonne {col_x} et {col_y} est de {df_actuel.corr(col_x,col_y)}"
+                )
+
             fig._scatter(
                 col1=col_y,
                 col2=col_x,
