@@ -324,7 +324,7 @@ elif section.endswith("graphiques"):
             )
             if st.button("show corr"):
                 st.info(
-                    f"la correlation entre la colonne {col_x} et {col_y} est de {df[[col_x,col_y]].corr()}"
+                    f"la correlation entre la colonne {col_x} et {col_y} est de {df[[col_x,col_y]].corr()*100}"
                 )
 
             fig._scatter(
