@@ -308,52 +308,25 @@ elif section.endswith("graphiques"):
         # selection des colonnes pour visualisation
         col_x = st.selectbox("Choisir une colonne catégorielle (X)", df.columns)
         col_y = st.selectbox("Choisir une colonne numérique (Y)", df.columns)
-        fig = Visualizer(df)
-        if (col_x in cols_num and col_y in cols_str) or (
-            col_x in cols_str and col_y in cols_num
-        ):
+        fig = Visualizer(df)  # on creer un objet  fig pour la visualisation
+
+        if col_x in cols_num and col_y in cols_str:
             fig._bar_chart(
-                col1=col_x, col2=col_y, title=f"barchart de {colx} par {col_y}"
+                col1=col_y, col2=col_x, title=f"barchart de {col_x} par {col_y}"
             )
-            fig._pie_chart(col1=col_x, col2=col_y, title="part de chaque variable")
-        elif col_x in cols_num and col_y in cols_str:
+            fig._pie_chart(col1=col_y, col2=col_x, title="part de chaque variable")
+        elif col_x in cols_num and col_y in cols_num:
             fig._scatter(
                 col1=col_x,
                 col2=col_y,
                 title=f"Scatter de {col_x} par {col_y}",
-                colsize=cols_num[4],
+                colsize=cols_num[0],
             )
         elif col_x in cols_str and col_y in cols_str:
             fig._hist_chart(col=col_x, title=f"distribution de la variable {col_x}")
             fig._hist_chart(col=col_y, title=f"distribution de la variable {col_y}")
         else:
             st.info("choisisais d'autres colonnes pour generer des graphiques")
-
-        """grouped = (
-            df.groupby(col_x)[col_y]
-            .mean()
-            .sort_values(ascending=False)  # du plus grand au plus petit
-            .to_frame()
-        )
-
-        cyberpunk_palette = [  # palette des couleurs
-            "#FF007F",
-            "#00F0FF",
-            "#9D00FF",
-            "#39FF14",
-            "#FF00F0",
-            "#FF0033",
-            "#00FFCC",
-            "#FFFF00",
-        ]
-        grouped["Couleur"] = (
-            cyberpunk_palette * (len(grouped) // len(cyberpunk_palette) + 1)
-        )[
-            : len(grouped)
-        ]  # calcul  de coloration
-
-        st.info(f"📊 Graphique généré : **{col_y}** par **{col_x}**")
-        st.bar_chart(grouped, y=col_y, color="Couleur")"""
 
         # --- Mémoire session_state ---
         st.session_state["last_graph"] = {"x": col_x, "y": col_y}

@@ -33,7 +33,6 @@ class Visualizer:
             self.dataFrame,
             x=col1,
             y=col2,
-            size=colsize,
             title=title,
             template=template,
             color_discrete_sequence=colors,
